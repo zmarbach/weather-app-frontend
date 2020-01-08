@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <h1>Test Home page</h1>
+    <p>Default ---- {{city | json}}</p>
+    <h3>Search City Name</h3>
+    <form>
+      <input type="text" placeholder="search..." [(ngModel)] = "searchedName" name="searchedName" id="searchedName"/>
+      <button type="submit" className="btn btn-primary" (click)="searchByCityName()">Search</button>
+    </form>
+      <div class="card">
+        <div class="card-header">Weather for {{city?.name}} at {{currentTime | date:"shortTime"}}</div>
+    
+        <div class="card-body">
+          <ul>
+            <li><h3>{{city.weather.main}}</h3></li>
+            <li><h3>{{city.weather.description}}</h3></li>
+            <li>{{city.main.temp}} F</li>
+            <li>{{city.main.feels_like}} F</li>
+            <li>{{city.main.temp_min}} F</li>
+            <li>{{city.main.temp_max}} F</li>
+          </ul>
+          <!--ADD button to toggle between F and C-->
+        </div>
+      </div>
+    </div>
